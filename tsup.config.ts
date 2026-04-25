@@ -1,0 +1,35 @@
+import { defineConfig } from 'tsup';
+
+export default defineConfig({
+  entry: {
+    index: 'src/index.ts',
+    'adapters/zod': 'src/adapters/zod.ts',
+    'adapters/joi': 'src/adapters/joi.ts',
+    'adapters/yup': 'src/adapters/yup.ts',
+    'adapters/valibot': 'src/adapters/valibot.ts',
+    'adapters/typebox': 'src/adapters/typebox.ts',
+    'adapters/arktype': 'src/adapters/arktype.ts',
+    'adapters/superstruct': 'src/adapters/superstruct.ts',
+    'adapters/runtypes': 'src/adapters/runtypes.ts',
+    'adapters/effect': 'src/adapters/effect.ts',
+  },
+  format: ['esm', 'cjs'],
+  dts: true,
+  clean: true,
+  splitting: false,
+  sourcemap: true,
+  external: [
+    'zod',
+    'joi',
+    'yup',
+    'valibot',
+    '@sinclair/typebox',
+    '@sinclair/typebox/value',
+    'arktype',
+    'superstruct',
+    'runtypes',
+    'effect',
+    'effect/Schema',
+    '@effect/schema',
+  ],
+});

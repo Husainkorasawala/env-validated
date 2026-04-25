@@ -1,0 +1,30 @@
+# Defense in depth: package.json "files" is the real allowlist.
+# If "files" is ever widened, these should still never ship to npm.
+
+src/
+scripts/
+tests/
+biome.json
+tsconfig.json
+tsconfig.build.json
+tsconfig.check.json
+tsup.config.ts
+vitest.config.ts
+*.lock
+bun.lock
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+.git/
+.github/
+.claude/
+.cursor/
+.vscode/
+.idea/
+.env
+.env.*
+*.tgz
+coverage/
+
+# Source maps are removed in prepack (npm pack / npm publish); keep this if "files" is loosened
+**/*.map
